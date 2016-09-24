@@ -4,7 +4,8 @@ module.exports = function() {
     $.gulp.task('spriteimg', function () {
         var spriteData = $.gulp.src('./source/images/icons/*.png').pipe($.gp.spritesmith({
             imgName: 'sprite.png',
-            cssName: 'sprite.css'
+            cssName: 'sprite.css',
+            algorithm: 'left-right'
         }));
         // var imgStream = spriteData.img
         // // DEV: We must buffer our stream into a Buffer for `imagemin`
