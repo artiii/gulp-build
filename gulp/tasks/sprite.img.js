@@ -12,12 +12,12 @@ module.exports = function() {
         // DEV: We must buffer our stream into a Buffer for `imagemin`
             .pipe($.gp.buffer())
             .pipe($.gp.imagemin())
-            .pipe($.gulp.dest('./source/images/sprite/img'));
+            .pipe($.gulp.dest('./source/images/sprite'));
 
         // Pipe CSS stream through CSS optimizer and onto disk
         spriteData.css
             .pipe($.gp.csso())
-            .pipe($.gulp.dest('./source/style/css'));
+            .pipe($.gulp.dest('./source/style'));
 
         // Return a merged stream to handle both `end` events
         // return $.gp.merge(imgStream, cssStream);
